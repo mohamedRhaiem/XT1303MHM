@@ -6,6 +6,7 @@ package com.cielo.br.ressources;
 
 import org.json.simple.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class LancamentoRessourceImpl implements LancamentoRessource{
 	@Autowired
 	private UtilsService utilsService;
 
-
+	@CrossOrigin(origins = "http://localhost:8000")
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public JSONArray getList() {
 		  return this.getUtilsService().getMockLancamento();

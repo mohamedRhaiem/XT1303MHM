@@ -1,0 +1,9 @@
+{
+  "name": "cielo-desafio-front",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0"
+  }
+}

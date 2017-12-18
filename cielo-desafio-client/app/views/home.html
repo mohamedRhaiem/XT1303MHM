@@ -1,0 +1,47 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2}
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
+
+    
+<h2>List Lancamento</h2>
+
+<table>
+  <tr>
+    <th>Data do lançamento</th>
+    <th>Descrição</th>
+    <th>Número</th>
+    <th>Situação</th>
+    <th>Data de confirmação</th>
+    <th>Dados bancários</th>
+    <th>Valor final</th>
+  </tr>
+  <tbody ng-repeat="lancamento in vm.lancamentos">
+    <tr>
+        <td>{{lancamento.dateEfetivaLancamento | date:'MM/dd/yyyy'}}</td>
+        <td>{{lancamento.descricaoGrupoPagamento}}</td>
+        <td>{{lancamento.numeroEvento}}</td>
+        <td>{{lancamento.lancamentoContaCorrenteCliente.nomeSituacaoRemessa}}</td>
+        <td>{{lancamento.dateLancamentoContaCorrenteCliente | date:'MM/dd/yyyy'}}</td>
+        <td>{{lancamento.nomeBanco}} Ag {{lancamento.dadosDomicilioBancario.numeroAgencia}}  CC {{lancamento.dadosDomicilioBancario.numeroContaCorrente}}</td>
+        <td>{{lancamento.valorLancamentoRemessa | currency:"R$":2}}</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
